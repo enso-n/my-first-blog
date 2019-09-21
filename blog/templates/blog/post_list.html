@@ -7,27 +7,12 @@
             <h1><a href="/">Super cool blog</a></h1>
         </div>
 
-        <div>
-
-            <h2><a href="">Python is LOVE♥</a></h2>
-            <p>Python is one of those rare languages which can claim to be both simple and powerful.
-                You will find yourself pleasantly surprised to see how easy it is to concentrate on the solution to
-                the problem rather than the syntax and structure of the language you are programming in.</p>
-        </div>
-
-        <div>
-
-            <h2><a href="">Story behind the name</a></h2>
-            <p>Guido van Rossum, the creator of the Python language, named the language after the BBC show "Monty Python's Flying Circus".
-                He doesn't particularly like snakes that kill animals for food by winding their long bodies around them and crushing them.</p>
-        </div>
-     <div>
-
-            <h2><a href="">Features of Python</a></h2>
-         <h3>Simple </h3>
-            <p>Python is a simple and minimalistic language. Reading a good Python program feels almost like reading English,
-                although very strict English! This pseudo-code nature of Python is one of its greatest strengths.
-                It allows you to concentrate on the solution to the problem rather than the language itself.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
